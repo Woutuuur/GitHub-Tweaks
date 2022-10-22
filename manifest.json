@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "GitHub Tweaks",
+  "version": "1.1",
+
+  "description": "Adds a couple of small additions to the GitHub website.",
+
+  "icons": {
+    "48": "icons/github.svg",
+    "96": "icons/github.svg"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.github.com/*"],
+      "js": [
+        "scripts/content/copy-filename.js",
+        "scripts/content/hide-all-annotations.js"
+      ]
+    }
+  ],
+
+  "background": {
+    "scripts": ["scripts/background/tab-update-event.js"]
+  },
+
+  "permissions": [
+    "*://github.com/*", "tabs", "webNavigation", "storage"
+  ],
+
+  "web_accessible_resources": [
+    "html/clipboard-copy.html"
+  ],
+
+  "options_ui": {
+    "page": "html/options.html",
+    "browser_style": true,
+    "chrome_style": true
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "github-tweaks@woutuuur.com"
+    }
+  }
+}
+  
