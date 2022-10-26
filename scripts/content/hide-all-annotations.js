@@ -10,7 +10,7 @@ function hideAllAnnotations() {
 }
 
 function initialize(request, sender, sendResponse) {
-    const pattern = /https:\/\/github\.com\/(.+\/)+(pull\/)(\d+)\/files$/;
+    const pattern = /https:\/\/github\.com\/(.+\/)+(pull\/)(\d+)\/(commits\/(.+)|files)$/;
 
     if (initializedOnTab == request.tab || !request.tab.url.match(pattern)) return
     initializedOnTab = request.tab
