@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "GitHub Tweaks",
-  "version": "1.5",
+  "version": "1.6",
 
   "description": "Adds a couple of small additions to the GitHub website.",
 
@@ -16,7 +16,8 @@
       "js": [
         "scripts/browser-polyfill.min.js",
         "scripts/content/copy-filename.js",
-        "scripts/content/hide-all-annotations.js"
+        "scripts/content/hide-all-annotations.js",
+        "scripts/content/hide-notifications-icon.js"
       ]
     }
   ],
