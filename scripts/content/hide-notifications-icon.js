@@ -6,8 +6,9 @@ function hideNotificationsIcon(request, sender, sendResponse) {
     const hideNotificationsIconSetting = browser.storage.sync.get("hideNotificationsIcon");
     hideNotificationsIconSetting.then((item) => {
         if (item.hideNotificationsIcon === undefined || item.hideNotificationsIcon) {
-            document.querySelectorAll("#AppHeader-notifications-button span.mail-status").forEach(el => el.remove())
+            document.querySelectorAll("#AppHeader-notifications-button").forEach(el => el.classList.remove('AppHeader-button--hasIndicator'))
         }
+        
     }, (error) => console.log(`Error retrieving setting ${error}`));
 
 }
